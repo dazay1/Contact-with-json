@@ -60,3 +60,17 @@ function editItem(e){
      })
      console.log(data);
 }
+document.getElementById("search-input").addEventListener('input', () => {
+    const searchInput = document.getElementById('search-input');
+    const filter = searchInput.value.toLowerCase();
+    const listItems = document.querySelectorAll('#tr')
+    listItems.forEach((item) => {
+        let text = item.textContent
+        if (text.toLowerCase().includes(filter.toLowerCase())) {
+            item.style.display = '';
+            console.log("as");
+        } else {
+            item.style.display = 'none';
+        }
+    })
+});
